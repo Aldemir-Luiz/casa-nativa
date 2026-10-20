@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Área do Dono — Casa Nativa</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+        .login-container {
+            max-width: 420px;
+            width: 100%;
+            margin: 60px auto;
+            background: var(--branco);
+            border: 1px solid var(--borda-cinza);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .login-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--cor-primaria);
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--borda-cinza);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .erro-msg {
+            color: #b7094c;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            display: none;
+            text-align: center;
+        }
+        .credenciais-info {
+            background: #F4F0EA;
+            padding: 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: 20px;
+            color: var(--cor-texto-suave);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo">casa nativa</a>
+            <a href="../index.html" style="text-decoration: none; color: var(--cor-texto); font-size: 0.9rem;">&larr; Voltar ao site</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Área do Dono</h1>
+                <p style="color: var(--cor-texto-suave); font-size: 0.9rem;">Acesse o painel administrativo.</p>
+            </div>
+
+            <form id="formLogin" onsubmit="realizarLogin(event)">
+                <div class="form-group">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" id="usuario" class="form-control" required placeholder="Digite 'dono'">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" class="form-control" required placeholder="Digite 'dono123'">
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Entrar</button>
+                <div id="erroMsg" class="erro-msg">Usuário ou senha incorretos.</div>
+            </form>
+
+            <div class="credenciais-info">
+                <strong>Acesso de demonstração:</strong><br>
+                Usuário: <code>dono</code><br>
+                Senha: <code>dono123</code>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom" style="border: none; padding: 20px;">
+            <p>&copy; 2026 Casa Nativa. Ambiente administrativo demonstrativo.</p>
+        </div>
+    </footer>
+
+    <script>
+        function realizarLogin(event) {
+            event.preventDefault();
+            const user = document.getElementById('usuario').value;
+            const pass = document.getElementById('senha').value;
+
+            if (user === 'dono' && pass === 'dono123') {
+                localStorage.setItem('casanativa_logado', 'true');
+                window.location.href = 'painel.html';
+            } else {
+                document.getElementById('erroMsg').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

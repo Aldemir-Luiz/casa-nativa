@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós — Casa Nativa</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .about-hero {
+            text-align: center;
+            padding: 60px 24px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .about-hero p {
+            font-size: 1.15rem;
+            color: var(--cor-texto-suave);
+        }
+        .banner-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .card-info {
+            background: var(--branco);
+            border: 1px solid var(--borda-cinza);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .card-info h3 {
+            margin-bottom: 12px;
+        }
+        .numeros-section {
+            background: #F4F0EA;
+            padding: 50px 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .numeros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .numero-item .valor {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--cor-primaria);
+        }
+        .equipe-card {
+            text-align: center;
+            background: var(--branco);
+            border: 1px solid var(--borda-cinza);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .avatar-placeholder {
+            width: 80px;
+            height: 80px;
+            background: var(--cor-secundaria);
+            color: var(--branco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">casa nativa</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html" class="active">Sobre</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="preco.html">Preços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <section class="about-hero">
+            <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: var(--cor-secundaria); font-weight: 600;">Nossa Casa, Sua História</p>
+            <h1>O essencial tem lugar aqui.</h1>
+            <p>Somos a Casa Nativa. Uma marca de móveis contemporâneos que acredita que morar bem não depende de muitos metros quadrados.</p>
+        </section>
+
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80" alt="Ateliê Casa Nativa" class="banner-img">
+
+        <!-- Missão, Visão e Valores -->
+        <section>
+            <h2 style="text-align: center; margin-bottom: 30px;">O que nos move</h2>
+            <div class="grid-3">
+                <div class="card-info">
+                    <h3>Missão</h3>
+                    <p>Tornar o primeiro lar mais acolhedor com móveis versáteis, bem proporcionados e escolhas descomplicadas.</p>
+                </div>
+                <div class="card-info">
+                    <h3>Visão</h3>
+                    <p>Ser uma referência em mobiliário contemporâneo para pequenos espaços, aproximando design e vida cotidiana.</p>
+                </div>
+                <div class="card-info">
+                    <h3>Acolhimento</h3>
+                    <p>Escutar antes de indicar. A casa começa em quem mora nela, com funcionalidade e escolhas conscientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipe -->
+        <section style="margin-bottom: 60px;">
+            <h2 style="text-align: center; margin-bottom: 10px;">Gente que faz casa</h2>
+            <p style="text-align: center; color: var(--cor-texto-suave); margin-bottom: 30px;">Um olhar, muitas mãos.</p>
+            
+            <div class="grid-3">
+                <div class="equipe-card">
+                    <div class="avatar-placeholder">AM</div>
+                    <h3>Ana Martins</h3>
+                    <p style="color: var(--cor-secundaria); font-size: 0.85rem; margin-bottom: 8px;">DESIGN E CURADORIA</p>
+                    <p style="font-size: 0.9rem; color: var(--cor-texto-suave);">Transforma necessidades cotidianas em combinações leves e funcionais.</p>
+                </div>
+                <div class="equipe-card">
+                    <div class="avatar-placeholder">RL</div>
+                    <h3>Rafael Luz</h3>
+                    <p style="color: var(--cor-secundaria); font-size: 0.85rem; margin-bottom: 8px;">MATERIAIS E PRODUTO</p>
+                    <p style="font-size: 0.9rem; color: var(--cor-texto-suave);">Cuida das proporções e das texturas que dão personalidade a cada peça.</p>
+                </div>
+                <div class="equipe-card">
+                    <div class="avatar-placeholder">BC</div>
+                    <h3>Beatriz Costa</h3>
+                    <p style="color: var(--cor-secundaria); font-size: 0.85rem; margin-bottom: 8px;">RELACIONAMENTO</p>
+                    <p style="font-size: 0.9rem; color: var(--cor-texto-suave);">Ajuda a encontrar o móvel certo, com atenção às medidas e ao seu momento.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Números de Impacto -->
+        <section class="numeros-section">
+            <h2>Uma ideia em movimento</h2>
+            <div class="numeros-grid">
+                <div class="numero-item">
+                    <div class="valor">8</div>
+                    <p>Peças na coleção atual</p>
+                </div>
+                <div class="numero-item">
+                    <div class="valor">3</div>
+                    <p>Anos de história</p>
+                </div>
+                <div class="numero-item">
+                    <div class="valor">120+</div>
+                    <p>Lares transformados</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>casa nativa</h4>
+                <p>Móveis para caber na sua vida. Aconchego para chamar de seu.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="preco.html">Preços</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>WhatsApp: (41) 99999-0000</p>
+                <p>ola@casanativa.example</p>
+                <p>Curitiba - PR</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Casa Nativa. Template demonstrativo.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

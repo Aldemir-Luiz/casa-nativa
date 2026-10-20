@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato — Casa Nativa</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+        .contato-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--cor-primaria);
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--borda-cinza);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            background: var(--branco);
+        }
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+        .info-card {
+            background: #F4F0EA;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .info-card h3 {
+            margin-bottom: 12px;
+        }
+        .alert-sucesso {
+            background: #E1EFEA;
+            color: #1b4332;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .contato-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">casa nativa</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="preco.html">Preços</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="page-header">
+            <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: var(--cor-secundaria); font-weight: 600;">A gente se aproxima</p>
+            <h1>Vamos pensar no seu espaço?</h1>
+            <p>Tire uma dúvida, peça medidas ou conte sobre o seu primeiro lar. Estamos aqui para ajudar.</p>
+        </div>
+
+        <div class="contato-layout">
+            <!-- Formulário de Contato -->
+            <div>
+                <div id="alertaSucesso" class="alert-sucesso">
+                    Mensagem enviada com sucesso! O dono já pode vê-la no painel administrativo.
+                </div>
+
+                <form id="formContato" onsubmit="enviarFormulario(event)">
+                    <div class="form-group">
+                        <label for="nome">Nome completo *</label>
+                        <input type="text" id="nome" class="form-control" required placeholder="Ex: Marina Oliveira">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" class="form-control" required placeholder="exemplo@dominio.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone / WhatsApp (opcional)</label>
+                        <input type="text" id="telefone" class="form-control" placeholder="(41) 98888-1122">
+                    </div>
+                    <div class="form-group">
+                        <label for="assunto">Assunto *</label>
+                        <input type="text" id="assunto" class="form-control" required placeholder="Ex: Dúvida sobre o Sofá Aurora">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem *</label>
+                        <textarea id="mensagem" class="form-control" required placeholder="Conte o que você precisa..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Enviar mensagem</button>
+                </form>
+            </div>
+
+            <!-- Informações de Atendimento -->
+            <div>
+                <div class="info-card">
+                    <h3>Conversar direto</h3>
+                    <p style="color: var(--cor-texto-suave); margin-bottom: 12px;">Prefere falar pelo WhatsApp ou ver o endereço?</p>
+                    <p><strong>WhatsApp:</strong> (41) 99999-0000</p>
+                    <p><strong>E-mail:</strong> ola@casanativa.example</p>
+                </div>
+                <div class="info-card">
+                    <h3>Endereço em Curitiba</h3>
+                    <p style="color: var(--cor-texto-suave); margin-bottom: 12px;">Perto de você, no coração de Curitiba.</p>
+                    <p><strong>Rua das Araucárias, 240</strong> — Curitiba / PR</p>
+                    <p style="margin-top: 8px; font-size: 0.9rem; color: var(--cor-secundaria);">Segunda a sexta: 9h - 18h | Sábado: 9h - 13h</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>casa nativa</h4>
+                <p>Móveis para caber na sua vida. Aconchego para chamar de seu.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="preco.html">Preços</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>WhatsApp: (41) 99999-0000</p>
+                <p>ola@casanativa.example</p>
+                <p>Curitiba - PR</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Casa Nativa. Template demonstrativo.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+            
+            const novaMensagem = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                telefone: document.getElementById('telefone').value,
+                assunto: document.getElementById('assunto').value,
+                mensagem: document.getElementById('mensagem').value
+            };
+
+            enviarMensagem(novaMensagem);
+
+            document.getElementById('alertaSucesso').style.display = 'block';
+            document.getElementById('formContato').reset();
+
+            setTimeout(() => {
+                document.getElementById('alertaSucesso').style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

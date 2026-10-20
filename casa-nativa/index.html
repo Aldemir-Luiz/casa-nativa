@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Nativa — Móveis para o primeiro apartamento</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Estilos específicos da Home */
+        .hero {
+            background-color: #F4F0EA;
+            padding: 80px 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--cor-texto-suave);
+            margin-bottom: 30px;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .produto-card {
+            background: var(--branco);
+            border: 1px solid var(--borda-cinza);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .produto-card:hover {
+            transform: translateY(-4px);
+        }
+        .produto-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .produto-info {
+            padding: 20px;
+        }
+        .produto-categoria {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--cor-secundaria);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .produto-nome {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .produto-preco {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cor-primaria);
+            margin-bottom: 16px;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">casa nativa</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="preco.html">Preços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: var(--cor-secundaria); font-weight: 600;">Design para a vida real</p>
+                <h1>Pequeno no espaço. Grande em acolher.</h1>
+                <p>Móveis contemporâneos que aproveitam cada canto e fazem do primeiro apartamento um lugar para chamar de seu.</p>
+                <a href="produtos.html" class="btn">Explorar catálogo</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" alt="Sala acolhedora Casa Nativa">
+            </div>
+        </section>
+
+        <!-- Produtos em Destaque -->
+        <section>
+            <div class="section-title">
+                <h2>Seu lar começa aqui</h2>
+                <p>Conheça alguns dos nossos favoritos para transformar o seu espaço.</p>
+            </div>
+            
+            <div class="produtos-grid" id="gridDestaques">
+                <!-- Os produtos serão carregados dinamicamente via JavaScript -->
+            </div>
+
+            <div style="text-align: center;">
+                <a href="produtos.html" class="btn btn-outline">Ver todos os produtos</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>casa nativa</h4>
+                <p>Móveis para caber na sua vida. Aconchego para chamar de seu.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="preco.html">Preços</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>WhatsApp: (41) 99999-0000</p>
+                <p>ola@casanativa.example</p>
+                <p>Curitiba - PR</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Casa Nativa. Template demonstrativo.</p>
+        </div>
+    </footer>
+
+    <!-- Script para carregar produtos do localStorage -->
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const produtos = obterProdutos();
+            const grid = document.getElementById('gridDestaques');
+            
+            // Exibir apenas os primeiros 4 produtos visíveis na Home
+            const destaques = produtos.filter(p => p.visivel).slice(0, 4);
+            
+            grid.innerHTML = destaques.map(p => `
+                <div class="produto-card">
+                    <img src="${p.imagem}" alt="${p.nome}">
+                    <div class="produto-info">
+                        <div class="produto-categoria">${p.categoria}</div>
+                        <div class="produto-nome">${p.nome}</div>
+                        <div class="produto-preco">R$ ${p.preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
+                        <a href="produtos.html" class="btn btn-outline" style="width: 100%; text-align: center; padding: 8px;">Ver detalhes</a>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
+</body>
+</html>
